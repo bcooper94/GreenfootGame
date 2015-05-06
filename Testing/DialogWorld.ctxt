@@ -1,6 +1,9 @@
 #BlueJ class context
 comment0.params=
 comment0.target=DialogWorld()
-comment1.params=
-comment1.target=void\ act()
-numComments=2
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ DialogWorld.\r\n\ \r\n
+comment1.params=returnWorld
+comment1.target=DialogWorld(ActionWorld)
+comment2.params=
+comment2.target=void\ act()
+numComments=3

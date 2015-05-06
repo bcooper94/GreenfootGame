@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.params=world\ name
+comment0.target=Player(ActionWorld,\ java.lang.String)
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Player\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=
+comment2.target=int\ getHealth()
+comment3.params=
+comment3.target=int\ getLevel()
+comment4.params=
+comment4.target=int\ getXp()
+comment5.params=xp
+comment5.target=void\ addXp(int)
+comment6.params=combat
+comment6.target=void\ setCombatMode(boolean)
+comment7.params=damage
+comment7.target=void\ damage(int)
+comment8.params=
+comment8.target=void\ keyListener()
+numComments=9

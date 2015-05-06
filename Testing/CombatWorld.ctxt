@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.params=player\ background\ returnWorld
+comment0.target=CombatWorld(Player,\ greenfoot.Actor,\ ActionWorld)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ CombatWorld.\r\n\ \r\n
+comment1.params=enemy
+comment1.target=void\ insertEnemy(CombatEnemy)
+comment2.params=
+comment2.target=void\ endBattle()
+numComments=3

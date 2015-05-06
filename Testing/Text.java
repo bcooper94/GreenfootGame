@@ -16,20 +16,26 @@ public class Text extends Actor
     
     String[] curText;
     int curDialog;
+    World returnWorld;
     
-    public Text(String[] dialog)
+    public Text(String[] dialog, World returnWorld)
     {
         curDialog = 0;
         curText = dialog;
-        setImage(new GreenfootImage(curText[curDialog], 50, Color.WHITE, Color.BLACK));
+        this.returnWorld = returnWorld;
+        setImage(new GreenfootImage(curText[curDialog], 50, Color.WHITE, new Color(210, 180, 140)));
     }
     public void act() 
     {
        if(Greenfoot.mouseClicked(null))
        {
-           if(curDialog < curText.length - 1)
+           if(curDialog < curText.length - 1) {
                 curDialog++;
-           setImage(new GreenfootImage(curText[curDialog], 50, Color.WHITE, Color.BLACK));
+           }
+           else {
+               Greenfoot.setWorld(returnWorld);
+           }
+           setImage(new GreenfootImage(curText[curDialog], 50, Color.WHITE, new Color(210, 180, 140)));
        }
     }    
 }
