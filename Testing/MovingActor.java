@@ -13,10 +13,8 @@ public class MovingActor extends Actor
     private static int acceleration = 1;
     private int jump;
     private int speed;
-    private ActionWorld world;
     
-    public MovingActor(ActionWorld world, int speed) {
-        this.world = world;
+    public MovingActor(int speed) {
         this.speed = speed;
         jump = 16;
     }
@@ -36,7 +34,7 @@ public class MovingActor extends Actor
     public boolean onGround() {
         List<Object> objects = getObjectsAtOffset(0, getImage().getHeight()/2 - 30, Ground.class);
         //Object ground = getOneObjectAtOffset(0, getImage().getHeight()/2 - 30, null);
-        if (isAtEdge()) {
+        if (getY() >= getWorld().getHeight()) {
             return true;
         }
         
@@ -89,7 +87,7 @@ public class MovingActor extends Actor
     }
     
     public ActionWorld getActionWorld() {
-        return world;
+        return (ActionWorld)getWorld();
     }
     
     public void jump() {

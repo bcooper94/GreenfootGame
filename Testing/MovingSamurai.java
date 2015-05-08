@@ -9,7 +9,7 @@ import greenfoot.*;
 public class MovingSamurai extends EnemyActor
 {
     public MovingSamurai(ActionWorld world) {
-        super(world, new GreenfootImage("enemy1.png"), 8);
+        super(new GreenfootImage("enemy1.png"), 8);
     }
     /**
      * Act - do whatever the SamuraiEnemy wants to do. This method is called whenever

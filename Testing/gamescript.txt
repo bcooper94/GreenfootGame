@@ -1,0 +1,225 @@
+Made by Diana "Kairo" Phan and Brandon Cooper
+(Haahh. Finally some free time for once!
+(so it's time to start something new!
+(...Wow, a lot of these games are so nostalgic!
+(Oh? This one...)
+([Game name] ...This was an RPG right?)
+(Something about mercenaries named 'The Guild' 
+(If I remember right, a samurai, a 'phantom' and a thief
+to stop a rebellion started by an invading country...)
+(Hmm... I don't really remember the details too well...
+You take the game out of its box 
+(Huh? How did this happen?)
+You reach out to touch it and suddenly  
+(Aah... what? Where... where am I? It's so dark...)
+(What's with these clothes? They're like... silk robes.)
+"Go look around! They must be somewhere nearby!"
+(Someone's coming this way... Maybe they can 
+"Ah!"
+"Umm excuse me-"
+The person suddenly draws their sword
+"Die!"
+"Ack!"
+You pivot on your heel and 
+(What?! What's with this person?!)
+"Over here! Hurry!"
+(I have to do something! Have to get away!)
+*Insert battle sequence*
+(Huff... Huff...)
+(They're still after me!)
+Someone suddenly grabs your arm as you pass by
+"Hey~ Can you stop moving? They keep chasing
+(Who the heck is this?!)
+"Let go of me!"
+"Whoa! Chill! I just-"
+"Hand that person over!"
+"Now, now. Just a second..."
+"I'll kill you!"
+"Yaaah-! Urgh-!"
+The man suddenly falls to the ground, revealing
+"Tch... Pathetic."
+"Reake! You're late!"
+"Shut it. You're noisy."
+"Hey, hey. You're going to make a bad
+(Client? Does he mean me?)
+"Like I care about a stranger's opinion."
+(Come to think of it, these people seem kind of 
+"Well? Who is this person?"
+"Haven't asked yet."
+"..."
+(Where have I seen them before...?)
+"More importantly, was this event supposed to
+"I thought it was later on."
+"You probably screwed it up somehow."
+"Ouch."
+"Anyways, I'm Crait! May I be so bold as to ask 
+"Ah! You two are from the game! 'The Guild'!
+(I wonder if they're cosplayers or something?
+(It's not like I got sucked into the game or
+"What, you already know."
+"I didn't say anything though..."
+"Hnn... You. Are you an information broker?
+(Who would admit to being a spy...?)
+"Or a stalker?!"
+"I am not!"
+"I bet you watch us for hours on end 
+"I never-!"
+"..."
+(Well... I guess I sort of did when I was 
+(But that's beside the point!)
+"Hey. They're coming."
+"Mm. Let's bounce."
+"Hey, can you run? If not I can carry you~"
+(No way!) 
+"Why should I go with you?!"
+"Relax! You know who we are, don't you?
+(Someone hired The Guild to protect me?)
+"Tch. Hey. Move it. Otherwise I'll leave you to die."
+"You're a terrible mercenary, Reake."
+"Don't worry, he's actually a very nice person."
+"...I think."
+*transition to another street* 80
+"...Enemy."
+"How many?"
+"Just one."
+"Heading towards base."
+"Shall I clean up?"
+"If they're a magic user..."
+(It's so dark I can't see anything. Where... Huh?)
+*Enemy stuff shows up*
+(Is that... the GUI?! [Game name's] GUI?!)
+"They're... They're a normal swordsman."
+"!!!"
+"What are you basing this on?"
+"Err... that's..."
+"I believe 'em!"
+"You!..."
+"Anything else you know about the enemy?"
+"How much HP they have and their levels..."
+"Level?"
+"Pointless. I'm attacking.
+"Hey! ..."
+"Well let's go help him out. Can't hurt, right?"
+*Battle Starts* 102
+(It really is the GUI from the game...
+"Hey. Can you follow my instructions?"
+"Listen to you? You think you're better at
+"Why not, Reake? Amuse us a bit~. 
+"Tch..."
+*After the fight* 108
+"Hahh. Not bad!"
+"..."
+"We're going."
+Crait sighs.
+"He's really not a very honest person, huh?"
+*Enters base*
+"We're back!!!"
+"Welcome back! Is this our client?"
+"Yup~! Got attacked by the revolutionists."
+"Revolutionists?!"
+"If that's so... you... could you be...?"
+"This person's the successor to the throne."
+(Wha-?! What?!)
+"Eh?! Really?!"
+"No! I'm not!"
+"There's no mistake."
+"But-!"
+"I agree. There are wanted posters of you in
+"...Okay, before that."
+"Weren't you hired to save me?
+"The request was very vague."
+"'Please rescue the person at this place
+"Isn't that dangerous?! What if it was a trap?!"
+"We're not afraid of danger."
+"You don't get very far in this occupation
+"The job was interesting so we went for it but..."
+"The money we got isn't nearly enough to cover
+"I thought so."
+"Then? What do you want to do? The job's technically
+"There are revolutionists everywhere in this city."
+"Doesn't matter. That's irrelevant to the mission."
+"Isn't the fact I'm not actually royalty relevant?!"
+"Enough."
+"Wait, Reake. Let's give 'em the benefit of the doubt.
+"Those clothes seem to suggest otherwise, but I agree
+"At the very least we can listen to what 
+(If telling them the truth keeps them from abandoning
+(Let's just hope they don't come to the conclusion
+"I'm not actually supposed to be in this world."
+"This place is a part of [Game name], which is the 
+"I don't know how I got here, but I need to find a
+"..."
+"...So they say."
+"...You don't believe me, huh?"
+"Now, now. We didn't say that~."
+"Well either way. If we throw the only child of the 
+"But if we protect a member of the royalty we
+Reake sighs.
+"So if we're screwed no matter what, let's do what's
+"At the very least we can bring you back to the
+"I'm down for that."
+"Fine."
+"I don't need to go to the palace though!
+"Hey, hey. Calm down~. You'll like it more at
+(!!!)
+"Th-That's my room!"
+"Whaaaat? Your room? No, no. This is the palace!
+"...Are you messing with me?"
+"Stop screwing around."
+"Yeah! You hear that, Crait?!"
+"You don't even know what your own home looks like?
+"Wha-?! Even you Reake?!"
+Yua giggles.
+"Anyways, that's where you wanted to go right?
+(Did they know the whole time who I was?)
+(...Urgh! Whatever!)
+*start action world* 175
+"Be careful okay? There are bound to be enemies 
+"Not that we'll lose that easily either though!"
+"Ah that's right. You can see the GU- I mean, the 
+"We'll be counting on you to guide us, okay?"
+"Uh huh. SURE."
+Reake sighs.
+"Idiot."
+*after reaching the palace*
+"...Enemy."
+"What?! This is the palace though, isn't it?!"
+"Technically we're at the royal family's villa.
+"Either way it's strange that the gates were left
+"revolution going on."
+"Yeah. If the villa's already been taken over
+"Well we can at least check out the inside. Maybe 
+"Or a way to get somewhere safe."
+*return to action world / after reaching final room*
+(That's my bedroom's door!)
+"!!! Get behind me!"
+"! ...They're not supposed to be here."
+"Yeah... But then how...? Is it because there's a...
+"Ah! You mean a bug in the system!"
+Yua swiftly punches Crait in the head.
+"Ouch!"
+"That's not funny when you do it, Yua. T_T"
+(...By 'bug' do they mean me?)
+"Prepare yourself."
+"Huh?"
+"Your final boss is just inside."
+"The final boss? You mean the revolutionary leader?"
+"YOUR final boss. ...You'll understand once you
+*introduce final boss*
+"!!!"
+"S***! That's right! I have a project
+"This is no joke! I need to get home as soon
+"Hahaha! Relax! It's just a game. At least enjoy
+*after the battle*
+"We've won."
+"Yeah! Great job! Your instructions were brilliant!"
+"For real though! I've always respected you, you
+"Thanks."
+*bright light shines on you*
+"Wha-?!"
+"What are you so afraid of? You wanted to go home,
+"So this is the end, huh? Too bad. Even though
+"You guys..."
+"At least you'll be safe now! Have a nice trip!
+"...Take care."
+"Come back and play with us some time!"

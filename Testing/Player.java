@@ -13,12 +13,20 @@ public class Player extends MovingActor
     private static int level = 1;
     private static int experience = 0;
     private static boolean inCombat;
-    private HealthBar healthBar;
+    private static HealthBar healthBar = new HealthBar(maxHealth, health);
     
-    public Player(ActionWorld world, String name) {
-        super(world, 4);
+    public Player(String name) {
+        super(4);
         inCombat = false;
-        healthBar = new HealthBar(world, maxHealth, health);
+        health = 1000;
+        maxHealth = 1000;
+        level = 1;
+        experience = 0;
+    }
+    
+    public void changeWorld(ActionWorld world, int xCoord, int yCoord) {
+        healthBar.redraw(world);
+        world.addObject(this, xCoord, yCoord);
     }
     
     /**
@@ -33,6 +41,10 @@ public class Player extends MovingActor
     
     public static int getHealth() {
         return health;
+    }
+    
+    public static int getMaxHealth() {
+        return maxHealth;
     }
     
     public static int getLevel() {
@@ -57,10 +69,10 @@ public class Player extends MovingActor
         inCombat = combat;
     }
     
-    public void damage(int damage) {
+    public static void damage(int damage) {
         health -= damage;
         healthBar.changeHealth(-damage);
-        // End if player dies
+       // End if player dies
         if (health <= 0) {
             Greenfoot.stop();
         }

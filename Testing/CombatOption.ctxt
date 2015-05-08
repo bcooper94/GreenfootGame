@@ -1,11 +1,7 @@
 #BlueJ class context
-comment0.params=world
-comment0.target=OptionsPane(CombatWorld)
+comment0.params=mouseOverImg\ noMouseOverImg
+comment0.target=CombatOption(java.lang.String,\ java.lang.String)
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ OptionsPane\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-comment2.params=
-comment2.target=void\ selectUp()
-comment3.params=
-comment3.target=void\ selectDown()
-numComments=4
+numComments=2

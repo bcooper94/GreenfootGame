@@ -13,14 +13,11 @@ public class EnemyActor extends MovingActor
     private GreenfootImage image;
     private static int timeDelay = 25;
     private int time;
-    private CollisionDummy collisionDummy;
     
-    public EnemyActor(ActionWorld world, GreenfootImage image, int speed) {
-        super(world, speed);
-        this.image = image;
+    public EnemyActor(GreenfootImage image, int speed) {
+        super(speed);
         setImage(image);
         time = 0;
-        collisionDummy = new CollisionDummy(world, speed, this);
     }
     
     /**
@@ -37,11 +34,9 @@ public class EnemyActor extends MovingActor
         //if 
             if (getX() < player.getX() - COLLIDE) {
                 moveRight();
-                collisionDummy.moveRight();
             }
             else if (getX() > player.getX() + COLLIDE) {
                 moveLeft();
-                collisionDummy.moveLeft();
             }
             if (getY() < player.getY() - HEIGHT && inPlayerRange())
             {
@@ -50,11 +45,24 @@ public class EnemyActor extends MovingActor
         //}
     }
     
+    public void checkForPlayer() {
+        CombatWorld fight;
+        Player player = (Player)getOneIntersectingObject(Player.class);
+        
+        if (player != null) {
+            //fight = new CombatWorld(player, getActionWorld());
+            if (this instanceof MovingNinja) {
+                //fight.insertEnemy(new CombatNinja(fight));
+            }
+            else {
+                //fight.insertEnemy(new CombatSamurai(fight));
+            }
+            player.setCombatMode(true);
+            //Greenfoot.setWorld(fight);
+        }
+   }
+    
     public boolean inPlayerRange() {
         return Math.abs(getX() - getActionWorld().getPlayer().getX()) < COLLIDE;
-    }
-    
-    public void addCollision() {
-        getActionWorld().addObject(collisionDummy, getX(), getY());
     }
 }

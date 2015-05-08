@@ -17,7 +17,7 @@ public abstract class CombatEnemy extends Actor
     public CombatEnemy(CombatWorld world) {
         this.world = world;
         numberGen = new Random();
-        
+        enemyTurn = true;
         if (numberGen.nextInt() % 2 == 0) {
             enemyTurn = true;
         }

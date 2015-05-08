@@ -16,8 +16,7 @@ public class CombatSamurai extends CombatEnemy
     }
     
     public void attackPlayer() {
-        Player player = world.getPlayer();
         int damage = numberGen.nextInt(50) + 50;
-        player.damage(damage);
+        Player.damage(damage);
     }
 }

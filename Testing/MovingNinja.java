@@ -10,7 +10,7 @@ public class MovingNinja extends EnemyActor
 {
     
    public MovingNinja(ActionWorld world) {
-       super(world, new GreenfootImage("enemy2.png"), 5);
+       super(new GreenfootImage("enemy2.png"), 5);
     }
     /**
      * Act - do whatever the NinjaEnemy wants to do. This method is called whenever

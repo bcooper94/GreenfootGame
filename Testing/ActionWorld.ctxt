@@ -1,16 +1,13 @@
 #BlueJ class context
-comment0.params=returnHere\ background
-comment0.target=ActionWorld(DialogWorld,\ greenfoot.Actor)
-comment1.params=background
-comment1.target=ActionWorld(greenfoot.Actor)
+comment0.params=returnHere
+comment0.target=ActionWorld(DialogWorld)
+comment1.params=
+comment1.target=void\ act()
 comment2.params=
-comment2.target=void\ act()
-comment3.params=
-comment3.target=ActionWorld\ getWorld()
-comment4.params=player\ x\ y
-comment4.target=void\ addObject(Player,\ int,\ int)
-comment5.params=player
-comment5.target=void\ addPlayer(Player)
-comment6.params=
-comment6.target=Player\ getPlayer()
-numComments=7
+comment2.target=ActionWorld\ getWorld()
+comment3.params=player\ xCoord\ yCoord\ show
+comment3.target=void\ addPlayer(Player,\ int,\ int,\ boolean)
+comment3.text=\r\n\ \ \ public\ void\ addObject(Player\ player,\ int\ x,\ int\ y)\ {\r\n\ \ \ \ \ \ \ super.addObject(player,\ x,\ y);\r\n\ \ \ \ \ \ \ this.player\ \=\ player;\r\n\ \ \ }\r\n
+comment4.params=
+comment4.target=Player\ getPlayer()
+numComments=5

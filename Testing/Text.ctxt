@@ -1,6 +1,14 @@
 #BlueJ class context
 comment0.params=dialog\ returnWorld
-comment0.target=Text(java.lang.String[],\ greenfoot.World)
-comment1.params=
-comment1.target=void\ act()
-numComments=2
+comment0.target=Text(java.lang.String[],\ ActionWorld)
+comment1.params=dialog
+comment1.target=Text(java.util.ArrayList)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ speedAct()
+comment4.params=
+comment4.target=int\ getCur()
+comment5.params=newBG
+comment5.target=void\ setBG(java.awt.Color)
+numComments=6

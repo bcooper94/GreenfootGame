@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=world\ maxHealth\ curHealth
-comment0.target=HealthBar(ActionWorld,\ int,\ int)
+comment0.params=maxHealth\ curHealth
+comment0.target=HealthBar(int,\ int)
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ HealthBar\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n

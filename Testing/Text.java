@@ -1,5 +1,7 @@
 import greenfoot.*;
 import java.awt.Color;
+import java.io.*;
+import java.util.*;
 
 /**
  * Write a description of class Text here.
@@ -14,28 +16,54 @@ public class Text extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    String[] curText;
-    int curDialog;
-    World returnWorld;
+    private static int TEXTSIZE = 30;
+    private Color bgColor = Color.BLACK;
+    private String[] curText;
+    private ArrayList <String> text;
+    private ActionWorld returnWorld;
+    public int curDialog;
     
-    public Text(String[] dialog, World returnWorld)
+    public Text(String[] dialog, ActionWorld returnWorld)
+    {
+        curText = dialog;
+        curDialog = 0;
+        setImage(new GreenfootImage(curText[curDialog], TEXTSIZE, Color.WHITE, bgColor));
+        this.returnWorld = returnWorld;
+    }
+    public Text(ArrayList <String> dialog)
     {
         curDialog = 0;
-        curText = dialog;
-        this.returnWorld = returnWorld;
-        setImage(new GreenfootImage(curText[curDialog], 50, Color.WHITE, new Color(210, 180, 140)));
+        text = dialog;
+        setImage(new GreenfootImage(text.get(curDialog), TEXTSIZE, Color.WHITE, bgColor));
     }
+    
     public void act() 
     {
        if(Greenfoot.mouseClicked(null))
        {
-           if(curDialog < curText.length - 1) {
+           if(curText != null && curDialog < curText.length - 1)
                 curDialog++;
-           }
-           else {
-               Greenfoot.setWorld(returnWorld);
-           }
-           setImage(new GreenfootImage(curText[curDialog], 50, Color.WHITE, new Color(210, 180, 140)));
+           else if(curDialog < text.size() -1)
+                curDialog++;
+           if(curText != null)
+                setImage(new GreenfootImage(curText[curDialog], TEXTSIZE, Color.WHITE, bgColor));
+           else
+                setImage(new GreenfootImage(text.get(curDialog), TEXTSIZE, Color.WHITE, bgColor));
        }
     }    
+    public void speedAct()
+    {
+        if(curText != null && curDialog < curText.length - 1)
+                setImage(new GreenfootImage(curText[curDialog], TEXTSIZE, Color.WHITE, bgColor));
+           else
+                setImage(new GreenfootImage(text.get(curDialog), TEXTSIZE, Color.WHITE, bgColor));
+    }
+    public int getCur()
+    {
+        return curDialog;
+    }
+    public void setBG(Color newBG)
+    {
+        bgColor = newBG;
+    }
 }

@@ -31,6 +31,9 @@ public class ActionBar extends HUD
     }
     
     public void redraw() {
-        
+        barImage.clear();
+        barImage.drawImage(new GreenfootImage("placeholderHUDBar.png"), 0, 0);
+        barImage.drawString("" + Player.getHealth(), 100, 53);
+        setImage(barImage);
     }
 }
