@@ -46,10 +46,16 @@ public class Player extends MovingActor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
-        // Add your action code here.
+        ActionWorld curWorld = (ActionWorld)getWorld();
         super.act();
         keyListener();
         walking();
+       
+        /*
+        if (curWorld != null) {
+            healthBar.redraw(curWorld);
+        }
+        */
     }
     
     public static int getXCoord() {
@@ -159,7 +165,7 @@ public class Player extends MovingActor
                 curWalking = false;
                 animationTimer = 0;
                 curImage = 1;
-                setImage("walk2.png");
+                setImage(imgs[curImage]);
             }
             if (Greenfoot.isKeyDown("Space")) {
                 jump();

@@ -28,6 +28,7 @@ public class DialogWorld extends World
     private ArrayList <String> chars;
     private Player player;
     private boolean inActionWorld;
+    private GreenfootSound curMusic;
     
     public DialogWorld() throws Exception
     {
@@ -116,7 +117,48 @@ public class DialogWorld extends World
          curDialog++;
          setCharacters(curDialog);
          setBG(curDialog);
+         //setMusic(curDialog);
       }
+   }
+   
+   private void setMusic(int index)
+   {
+       if(index == 12 || index == 26 || index == 38 || index == 80 || index == 114 || index == 175
+            || index == 183 || index == 193 || index == 212)
+       {
+           curMusic.stop();
+           curMusic = null;
+       }
+       else if(index == 1 || index == 213)
+       {
+           curMusic = new GreenfootSound("262522__orangefreesounds__gentle-piano-music-loop.wav");
+       }
+       else if(index == 13 || index == 27 || index == 81)
+       {
+           curMusic = new GreenfootSound("112072__cheesepuff__suspence-background.mp3");
+           curMusic.setVolume(100);
+       }
+       else if(index == 39 || index == 109)
+       {
+           //some other relaxed talking bg music that i dont have yet
+       }
+       else if(index == 115)
+       {
+           curMusic = new GreenfootSound("211492__lemoncreme__guitar-music.wav");
+           curMusic.setVolume(60);
+       }
+       else if(index == 184)
+       {
+           curMusic = new GreenfootSound("109239__cheesepuff__song-6.mp3");
+       }
+       else if(index == 194)
+       {
+           //curMusic = new GreenfootSound("250856__joshuaempyre__epic-orchestra-loop.wav");
+       }
+       if(curMusic != null && !curMusic.isPlaying())
+       {
+           curMusic.playLoop();
+       }
    }
    
    private void setBG(int index)

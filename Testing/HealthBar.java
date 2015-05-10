@@ -44,21 +44,24 @@ public class HealthBar extends HUD
         
         
         int barValue = (int) (BARWIDTH * (Player.getHealth() / Player.getMaxHealth()));
-        GreenfootImage barImg = new GreenfootImage(BARWIDTH + 4, BARHEIGHT + 4);
-        barImg.setColor(Color.BLACK);
-        barImg.fill();
-        barImg.setColor(Color.RED);
-        barImg.drawRect(0, 0, barImg.getWidth() - 1, barImg.getHeight() - 1);
-        barImg.setColor(Color.RED);
-        barImg.fillRect(2, 2, barValue, BARHEIGHT);
+        if (bar != null) {
+            bar.clear();
+        }
+        bar = new GreenfootImage(BARWIDTH + 4, BARHEIGHT + 4);
+        bar.setColor(Color.BLACK);
+        bar.fill();
+        bar.setColor(Color.RED);
+        bar.drawRect(0, 0, bar.getWidth() - 1, bar.getHeight() - 1);
+        bar.setColor(Color.RED);
+        bar.fillRect(2, 2, barValue, BARHEIGHT);
         
         int maxY = 0;
-        if (barImg.getHeight() > maxY) maxY = barImg.getHeight();
+        if (bar.getHeight() > maxY) maxY = bar.getHeight();
         GreenfootImage image = new GreenfootImage(BARWIDTH, BARHEIGHT);
         ///image.setColor(Color.BLACK);
         //image.fill();
-        image.drawImage(barImg, 20, 350);
-        setImage(barImg);
+        image.drawImage(bar, 20, 350);
+        setImage(bar);
     }
     
     public void changeHealth(int amount) {
