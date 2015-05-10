@@ -22,6 +22,7 @@ public class DefendOption extends CombatOption
     }
     
     public void carryOut(Player player, CombatEnemy enemy) {
-        
+        BattleText text = new BattleText("You prepare to block the next strike!");
+        Player.defend();
     }
 }

@@ -15,6 +15,7 @@ public class CombatWorld extends ActionWorld
     private static ArrayList<CombatOption> options;
     private boolean playerTurn;
     private Player player;
+    private HealthBar healthBar;
     
     private static int selectedOption;
     
@@ -44,10 +45,12 @@ public class CombatWorld extends ActionWorld
     
     /** Only used for first combat scene. */
     public CombatWorld(Player player, DialogWorld returnWorld) {
-        super(returnWorld);
+        super(returnWorld, 600);
         this.player = player;
         this.returnWorld = (World)returnWorld;
         selectedOption = 0;
+        healthBar = new HealthBar(Player.getHealth(), Player.getMaxHealth());
+        addObject(healthBar, 100, 360);
         
         for (int i = 0; i < options.size(); i++) {
             addObject(options.get(i), 500, 350 + i * 20);

@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class ActionWorld extends World
+public class ActionWorld extends ScrollWorld
 {
 
     /**
@@ -16,23 +16,20 @@ public class ActionWorld extends World
     
     private DialogWorld previous;
     private ActionBar actionBar;
-    private HealthBar healthBar;
     private Actor background;
     private Player player;
     
-    public ActionWorld(DialogWorld returnHere)
+    public ActionWorld(DialogWorld returnHere, int fullWidth)
     {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        //super(600, 400, 1); 
+        super(600, 400, 1, fullWidth, 400);
         this.player = player;
         //String[] temp = {"nice to meet you", "where you been?", "NOPE"};
         previous = returnHere;
         //this.addObject(new Text(temp, this), 500, 600);
         actionBar = new ActionBar(this);
-        healthBar = new HealthBar(Player.getHealth(), Player.getMaxHealth());
-        
         addObject(actionBar, 350, 451);
-        addObject(healthBar, 200, 350);
     }
     
     public void act()

@@ -7,4 +7,6 @@ comment2.params=
 comment2.target=void\ norm()
 comment3.params=
 comment3.target=void\ flip()
-numComments=4
+comment4.params=index
+comment4.target=void\ setExpression(int)
+numComments=5

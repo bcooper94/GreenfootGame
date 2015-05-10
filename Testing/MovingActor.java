@@ -7,7 +7,7 @@ import java.util.List;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MovingActor extends Actor
+public class MovingActor extends ScrollActor
 {
     private int vSpeed;
     private static int acceleration = 1;
@@ -32,7 +32,7 @@ public class MovingActor extends Actor
     }
     
     public boolean onGround() {
-        List<Object> objects = getObjectsAtOffset(0, getImage().getHeight()/2 - 30, Ground.class);
+        List<Object> objects = getObjectsAtOffset(0, getImage().getHeight() / 2 - 30, Ground.class);
         //Object ground = getOneObjectAtOffset(0, getImage().getHeight()/2 - 30, null);
         if (getY() >= getWorld().getHeight()) {
             return true;
@@ -86,9 +86,11 @@ public class MovingActor extends Actor
         return vSpeed;
     }
     
+    /*
     public ActionWorld getActionWorld() {
         return (ActionWorld)getWorld();
     }
+    */
     
     public void jump() {
         if (onGround()) {

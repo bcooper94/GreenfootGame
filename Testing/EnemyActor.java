@@ -27,18 +27,18 @@ public class EnemyActor extends MovingActor
     public void act() 
     {
         super.act();
-        Player player = getActionWorld().getPlayer();
+        //Player player = getWorl().getPlayer();
         //time++;
         //if (time == timeDelay) {
             // Move toward player
         //if 
-            if (getX() < player.getX() - COLLIDE) {
+            if (getX() < Player.getXCoord() - COLLIDE) {
                 moveRight();
             }
-            else if (getX() > player.getX() + COLLIDE) {
+            else if (getX() > Player.getXCoord() + COLLIDE) {
                 moveLeft();
             }
-            if (getY() < player.getY() - HEIGHT && inPlayerRange())
+            if (getY() < Player.getYCoord() - HEIGHT && inPlayerRange())
             {
                 jump();
             }
@@ -63,6 +63,7 @@ public class EnemyActor extends MovingActor
    }
     
     public boolean inPlayerRange() {
-        return Math.abs(getX() - getActionWorld().getPlayer().getX()) < COLLIDE;
+        //return Math.abs(getX() - getActionWorld().getPlayer().getX()) < COLLIDE;
+        return Math.abs(getX() - Player.getXCoord()) < COLLIDE;
     }
 }

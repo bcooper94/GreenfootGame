@@ -9,8 +9,11 @@ import java.awt.Color;
  */
 public class BattleText extends Actor
 {
+    private int fade;
+    
     public BattleText(String text) {
         setImage(new GreenfootImage(text, 20, Color.WHITE, Color.BLACK));
+        fade = 255;
     }
     
     /**
@@ -19,6 +22,9 @@ public class BattleText extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        if (fade > 0) {
+            fade--;
+            getImage().setTransparency(fade);
+        }
     }    
 }

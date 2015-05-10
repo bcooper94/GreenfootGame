@@ -8,12 +8,9 @@ import greenfoot.*;
  */
 public class GroundPlatform extends Ground
 {
-    /**
-     * Act - do whatever the GroundPlatform wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
+    public GroundPlatform() {
+        GreenfootImage ground = new GreenfootImage("ground.png");
+        ground.setTransparency(0);
+        setImage(ground);
+    }
 }

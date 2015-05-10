@@ -34,7 +34,7 @@ public class DialogWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         
-        this.action = new ActionWorld(this);
+        this.action = new ActionWorld(this, 1800);
         this.player = new Player("Playername");
         inActionWorld = false;
         String[] temp = {"hi", "you touched me!", "did you get this far? :3", "eien jaaaaa naiiiii", 
@@ -58,14 +58,18 @@ public class DialogWorld extends World
         BufferedReader nameList = new BufferedReader(new FileReader("names.txt"));
         String line;
         
-        while ((line = script.readLine()) != null)
+        while ((line = script.readLine()) != null) {
             speak1.add(line);
-        while ((line = script2.readLine()) != null)
+        }
+        while ((line = script2.readLine()) != null) {
             speak2.add(line);
-        while ((line = charApp.readLine()) != null)
+        }
+        while ((line = charApp.readLine()) != null) {
             chars.add(line);
-        while ((line = nameList.readLine()) != null)
+        }
+        while ((line = nameList.readLine()) != null) {
             names.add(line);
+        }
 
         dialog = new Text(speak1); 
         dialog2 = new Text(speak2);
@@ -92,6 +96,7 @@ public class DialogWorld extends World
         
         //Greenfoot.playSound("Shinobi koi Utsutsu Opening.mp3");
    }
+   
    public void act()
    {
       if(!inActionWorld && Greenfoot.getKey() == "space")
@@ -113,12 +118,15 @@ public class DialogWorld extends World
          setBG(curDialog);
       }
    }
+   
    private void setBG(int index)
    {
-       if(index >= 1 && index < 13)
-            setBackground("bedroom.png");
-       if(index >= 13 && index < 80)
+       if(index >= 1 && index < 13) {
+            setBackground("bedroom.png"); 
+       }
+       if(index >= 13 && index < 80) {
             setBackground("street1.png");
+       }
        if(index == 26) //First Battle
        {
            FirstCombat firstCombat = new FirstCombat(player, this);
@@ -128,19 +136,29 @@ public class DialogWorld extends World
            inActionWorld = true;
            firstCombat.insertEnemy(new CombatNinja(firstCombat, 10000));
        }
-       if(index >= 80 && index < 114)
+       if(index >= 80 && index < 114) {
             setBackground("street3.png");
-       if(index >= 114)
+            ExploreStreets exploreStreets = new ExploreStreets(this, 1800);
+            exploreStreets.addObject(player, 300, 250);
+            exploreStreets.addCameraFollower(player, 300, 250);
+            Greenfoot.setWorld(exploreStreets);
+       }
+       if(index >= 114) {
             setBackground("base.png");
-       if(index == 163)
+       }
+       if(index == 163) {
             picture.setImage("bedpic.png");
-       if(index == 171)
-            picture.setImage("blank.png");
+       }
+       if(index == 171) {
+           picture.setImage("blank.png");
+       }
    }
+   
    private void takeOff(Actor actor)
    {
        actor.setImage("blank.png");
    }
+   
    private void setCharacters(int index)
    {
        if(index < chars.size())
@@ -184,6 +202,9 @@ public class DialogWorld extends World
                    yua.flip();
                }
            }
+           crait.setExpression(index);
+           reake.setExpression(index);
+           yua.setExpression(index);
        }
     }
 }
