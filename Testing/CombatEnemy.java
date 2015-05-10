@@ -14,8 +14,9 @@ public abstract class CombatEnemy extends Actor
     protected Random numberGen;
     private int health;
     
-    public CombatEnemy(CombatWorld world) {
+    public CombatEnemy(CombatWorld world, int health) {
         this.world = world;
+        this.health = health;
         numberGen = new Random();
         enemyTurn = true;
         if (numberGen.nextInt() % 2 == 0) {
@@ -28,18 +29,22 @@ public abstract class CombatEnemy extends Actor
      */
     public void act() 
     {
+        /*
         if (enemyTurn) {
             attackPlayer();
             enemyTurn = false;
         }
+        */
     }
     
-    public void enemyTurn() {
-        enemyTurn = true;
+    /*
+    public void setEnemyTurn(boolean value) {
+        enemyTurn = value;
     }
+    */
     
-    public abstract void attackPlayer();
-    
+    public abstract int attackPlayer();
+   
     public void setHealth(int value) {
         this.health = value;
     }

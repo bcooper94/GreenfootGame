@@ -10,13 +10,19 @@ public class CombatNinja extends CombatEnemy
 {
     private CombatWorld world;
     
-    public CombatNinja(CombatWorld world) {
-        super(world);
+    public CombatNinja(CombatWorld world, int health) {
+        super(world, health);
         this.world = world;
     }
     
-    public void attackPlayer() {
+    public int attackPlayer() {
         int damage = numberGen.nextInt(50) + 50;
         Player.damage(damage);
+        
+        return damage;
+    }
+    
+    public String toString() {
+        return "ninja";
     }
 }

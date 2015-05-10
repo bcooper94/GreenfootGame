@@ -31,13 +31,8 @@ public class ActionWorld extends World
         actionBar = new ActionBar(this);
         healthBar = new HealthBar(Player.getHealth(), Player.getMaxHealth());
         
-        //MovingNinja ninja = new MovingNinja(this);
-        
         addObject(actionBar, 350, 451);
         addObject(healthBar, 200, 350);
-        //addObject(new GroundPlatform(), 300, 250);
-        //addObject(ninja, 500, 155);
-        //ninja.addCollision();
     }
     
     public void act()
@@ -64,5 +59,9 @@ public class ActionWorld extends World
    
    public Player getPlayer() {
        return this.player;
+   }
+   
+   protected void removeActionBar() {
+       removeObject(actionBar);
    }
 }

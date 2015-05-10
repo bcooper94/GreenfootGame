@@ -1,15 +1,14 @@
 #BlueJ class context
-comment0.params=world
-comment0.target=CombatEnemy(CombatWorld)
+comment0.params=world\ health
+comment0.target=CombatEnemy(CombatWorld,\ int)
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ CombatEnemy\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
-comment2.target=void\ enemyTurn()
-comment3.params=
-comment3.target=void\ attackPlayer()
+comment2.target=int\ attackPlayer()
+comment2.text=\r\n\ \ \ \ public\ void\ setEnemyTurn(boolean\ value)\ {\r\n\ \ \ \ \ \ \ \ enemyTurn\ \=\ value;\r\n\ \ \ \ }\r\n
+comment3.params=value
+comment3.target=void\ setHealth(int)
 comment4.params=value
-comment4.target=void\ setHealth(int)
-comment5.params=value
-comment5.target=void\ damage(int)
-numComments=6
+comment4.target=void\ damage(int)
+numComments=5

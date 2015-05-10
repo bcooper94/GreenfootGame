@@ -121,12 +121,12 @@ public class DialogWorld extends World
             setBackground("street1.png");
        if(index == 26) //First Battle
        {
-           CombatWorld firstCombat = new CombatWorld(player, this);
+           FirstCombat firstCombat = new FirstCombat(player, this);
            player.setCombatMode(true);
            Greenfoot.setWorld(firstCombat);
            firstCombat.setBackground("bedroom.png");
            inActionWorld = true;
-           firstCombat.insertEnemy(new CombatNinja(firstCombat));
+           firstCombat.insertEnemy(new CombatNinja(firstCombat, 10000));
        }
        if(index >= 80 && index < 114)
             setBackground("street3.png");

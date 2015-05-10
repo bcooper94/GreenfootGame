@@ -13,7 +13,20 @@ public class CombatWorld extends ActionWorld
     private CombatEnemy enemy;
     private World returnWorld;
     private static ArrayList<CombatOption> options;
+    private boolean playerTurn;
     private Player player;
+    
+    private static int selectedOption;
+    
+    static {
+        // Draw clickable options
+        selectedOption = 0;
+        options = new ArrayList<CombatOption>();
+        options.add(new AttackOption("attack_mouseOver.png", "attack_noMouseOver.png"));
+        options.add(new DefendOption("defend_mouseOver.png", "defend_noMouseOver.png"));
+        options.add(new FleeOption("flee_mouseOver.png", "flee_noMouseOver.png"));
+        options.get(selectedOption).setSelected(true);
+    }
     
     /**
      * Constructor for objects of class CombatWorld.
@@ -34,15 +47,36 @@ public class CombatWorld extends ActionWorld
         super(returnWorld);
         this.player = player;
         this.returnWorld = (World)returnWorld;
-        
-        // Draw clickable options
-        options = new ArrayList<CombatOption>();
-        options.add(new CombatOption("attack_mouseOver.png", "attack_noMouseOver.png"));
-        options.add(new CombatOption("defend_mouseOver.png", "defend_noMouseOver.png"));
-        options.add(new CombatOption("flee_mouseOver.png", "flee_noMouseOver.png"));
+        selectedOption = 0;
         
         for (int i = 0; i < options.size(); i++) {
             addObject(options.get(i), 500, 350 + i * 20);
+        }
+    }
+    
+    public void act() {
+        int enemyDamage;
+        String key = Greenfoot.getKey();
+        if (key != null) {
+            if (selectedOption > 0 && (key.equals("w") || key.equals("up"))) {
+                options.get(selectedOption--).setSelected(false);
+                options.get(selectedOption).setSelected(true);
+            }
+            else if (selectedOption + 1 < options.size() && (key.equals("s") || key.equals("down"))) {
+                options.get(selectedOption++).setSelected(false);
+                options.get(selectedOption).setSelected(true);
+            }
+            
+            if (playerTurn && key.equals("enter")) {
+                options.get(selectedOption).carryOut(player, enemy);
+                setPlayerTurn(false);
+            }
+        }
+        
+        if (enemy != null && !playerTurn) {
+            enemyDamage = enemy.attackPlayer();
+            addObject(new BattleText(enemy + " hits you for " + enemyDamage + " damage!"), 300, 50);
+            setPlayerTurn(true);
         }
     }
     
@@ -59,5 +93,16 @@ public class CombatWorld extends ActionWorld
     public void returnToStory() {
         player.setCombatMode(false);
         Greenfoot.setWorld(returnWorld);
+    }
+    
+    public void setPlayerTurn(boolean value) {
+        playerTurn = value;
+        //enemy.setEnemyTurn(!value);
+        try {
+            Thread.sleep(250);
+        }
+        catch (InterruptedException e) {
+            
+        }
     }
 }

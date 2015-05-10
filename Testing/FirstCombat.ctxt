@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=player\ returnWorld
+comment0.target=FirstCombat(Player,\ DialogWorld)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ FirstCombat.\r\n\ \r\n
+comment1.params=
+comment1.target=void\ act()
+numComments=2
