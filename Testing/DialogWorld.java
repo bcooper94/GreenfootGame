@@ -32,6 +32,8 @@ public class DialogWorld extends World
     
     public static boolean secondBattleDone;
     public static boolean thirdBattleDone;
+    public static boolean exploreStreetsDone;
+    public static boolean roadToPalaceDone;
     
     public DialogWorld() throws Exception
     {
@@ -43,6 +45,8 @@ public class DialogWorld extends World
         inActionWorld = false;
         secondBattleDone = false;
         thirdBattleDone = false;
+        exploreStreetsDone = false;
+        roadToPalaceDone = false;
         
         ArrayList <String> speak1 = new ArrayList <String> ();
         ArrayList <String> speak2 = new ArrayList <String> ();
@@ -120,6 +124,25 @@ public class DialogWorld extends World
          setBG(dialog.curDialog + 1);
          setMusic(dialog.curDialog + 1);
       }
+      if (curDialog == 176 && !exploreStreetsDone) {
+          //advance();
+          inActionWorld = true;
+          ExploreStreets exploreStreets = new ExploreStreets(1800);
+          exploreStreets.addObject(player, 300, 250);
+          exploreStreets.addCameraFollower(player, 300, 250);
+          Greenfoot.setWorld(exploreStreets);
+      }
+      if (curDialog == 194 && !roadToPalaceDone) {
+          //advance();
+          inActionWorld = true;
+          RoadToPalace palaceRoad = new RoadToPalace(1200);
+          palaceRoad.addObject(player, 300, 250);
+          palaceRoad.addCameraFollower(player, 300, 250);
+          Greenfoot.setWorld(palaceRoad);
+      }
+      if (curDialog == 213) {
+          // Boss battle
+      }
    }
    public void advance()
    {
@@ -127,9 +150,9 @@ public class DialogWorld extends World
        dialog.curDialog++;
        dialog2.curDialog++;
        name.curDialog++;
-       dialog.speedAct();
-       dialog2.speedAct();
-       name.speedAct();
+       //dialog.speedAct();
+       //dialog2.speedAct();
+       //name.speedAct();
        setBG(dialog.curDialog + 1);
        setCharacters(dialog.curDialog + 1);
    }
@@ -165,7 +188,7 @@ public class DialogWorld extends World
        }
        else if(index == 184)
        {
-           curMusic = new GreenfootSound("109239__cheesepuff__song-6.wav");
+           curMusic = new GreenfootSound("109239_cheesepuff_song-6.wav");
        }
        else if(index == 194)
        {
@@ -173,7 +196,7 @@ public class DialogWorld extends World
        }
        if(curMusic != null && !curMusic.isPlaying())
        {
-           curMusic.playLoop();
+           //curMusic.playLoop();
        }
    }
    
@@ -198,12 +221,7 @@ public class DialogWorld extends World
            firstCombat.insertEnemy(new CombatNinja(firstCombat, 10000));
        }
        if(index >= 80 && index < 114) {
-           inActionWorld = true;
            setBackground("street3.png");
-           ExploreStreets exploreStreets = new ExploreStreets(1800);
-           exploreStreets.addObject(player, 300, 250);
-           exploreStreets.addCameraFollower(player, 300, 250);
-           Greenfoot.setWorld(exploreStreets);
        }
        if(index >= 114) {
             setBackground("base.png");

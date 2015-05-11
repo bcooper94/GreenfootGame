@@ -36,7 +36,10 @@ public class ActionWorld extends ScrollWorld
         //if(Greenfoot.getKey() == "space")
         //    Greenfoot.setWorld(previous);
         if (Player.getXCoord() > 590) {
+            Player.setCombatMode(false);
+            DialogWorld.setInActionWorld(false);
             Greenfoot.setWorld(Player.storyWorld);
+            Player.setX(0);
         }
    }
    

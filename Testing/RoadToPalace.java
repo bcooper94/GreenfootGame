@@ -1,12 +1,12 @@
 import greenfoot.*;
 
 /**
- * Write a description of class ExploreStreets here.
+ * Write a description of class RoadToPalace here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class ExploreStreets extends ActionWorld
+public class RoadToPalace extends ActionWorld
 {
     private DialogWorld returnHere;
     
@@ -14,18 +14,18 @@ public class ExploreStreets extends ActionWorld
      * Constructor for objects of class ExploreStreets.
      * 
      */
-    public ExploreStreets(int fullWidth) {
+    public RoadToPalace(int fullWidth) {
         super(fullWidth);
         this.returnHere = returnHere;
         addObject(new GroundPlatform(), fullWidth / 2, 350);
         
-        addObject(new MovingSamurai(this), 1200, 300);
+        //addObject(new MovingSamurai(this), 1200, 300);
         addObject(new MovingNinja(this), 1800, 300);
     }
     
     public void act() {
         if (Player.getXCoord() > 590) {
-            DialogWorld.exploreStreetsDone = true;
+            DialogWorld.roadToPalaceDone = true;
         }
         super.act();
     }

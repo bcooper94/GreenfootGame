@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=fullWidth
-comment0.target=ExploreStreets(int)
+comment0.target=RoadToPalace(int)
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ ExploreStreets.\r\n\ \r\n
 comment1.params=
 comment1.target=void\ act()

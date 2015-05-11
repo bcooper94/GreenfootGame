@@ -71,6 +71,10 @@ public class Player extends MovingActor
         return yCoord;
     }
     
+    public static void setX(int x) {
+        xCoord = x;
+    }
+    
     public static int getHealth() {
         return health;
     }
@@ -101,7 +105,7 @@ public class Player extends MovingActor
         }
     }
     
-    public void setCombatMode(boolean combat) {
+    public static void setCombatMode(boolean combat) {
         inCombat = combat;
     }
     
