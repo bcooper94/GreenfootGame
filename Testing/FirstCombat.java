@@ -1,4 +1,5 @@
 import greenfoot.*;
+import java.util.ArrayList;
 
 /**
  * Write a description of class FirstCombat here.
@@ -20,11 +21,18 @@ public class FirstCombat extends CombatWorld
     public void act() {
         super.act();
         
-        if (getPlayer().getHealth() <= 0) {
+        if (getPlayer().getHealth() <= 150) {
+            ArrayList<String> text = new ArrayList<String>();
             removeActionBar();
-            Greenfoot.setSpeed(50);
-            Greenfoot.delay(500);
-            endBattle();
+            text.add("You decide to turn and run away");
+            addObject(new textbg(), 300, 365);
+            addObject(new Text(text), 300, 365);
+            
+            if (Greenfoot.getKey() == "space" || Greenfoot.mouseClicked(null)) {
+                //Greenfoot.delay(500);
+                Player.setHealth(Player.getMaxHealth());
+                endBattle();
+            }
         }
     }
 }

@@ -35,6 +35,9 @@ public class ActionWorld extends ScrollWorld
     {
         //if(Greenfoot.getKey() == "space")
         //    Greenfoot.setWorld(previous);
+        if (Player.getXCoord() > 590) {
+            Greenfoot.setWorld(Player.storyWorld);
+        }
    }
    
    public ActionWorld getWorld() {

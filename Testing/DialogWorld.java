@@ -27,8 +27,11 @@ public class DialogWorld extends World
     int curDialog;
     private ArrayList <String> chars;
     private Player player;
-    private boolean inActionWorld;
+    private static boolean inActionWorld;
     private GreenfootSound curMusic;
+    
+    public static boolean secondBattleDone;
+    public static boolean thirdBattleDone;
     
     public DialogWorld() throws Exception
     {
@@ -38,6 +41,8 @@ public class DialogWorld extends World
         this.action = new ActionWorld(1800);
         this.player = new Player("Playername", this);
         inActionWorld = false;
+        secondBattleDone = false;
+        thirdBattleDone = false;
         String[] temp = {"hi", "you touched me!", "did you get this far? :3", "eien jaaaaa naiiiii", 
             "yukou~", "samurai ni umarete", "samurai no kokoro wo daiiiiite"};
         
@@ -171,6 +176,7 @@ public class DialogWorld extends World
        }
        if(index == 26) //First Battle
        {
+           //curDialog += 2;
            FirstCombat firstCombat = new FirstCombat(player, null);
            player.setCombatMode(true);
            Greenfoot.setWorld(firstCombat);
@@ -179,11 +185,12 @@ public class DialogWorld extends World
            firstCombat.insertEnemy(new CombatNinja(firstCombat, 10000));
        }
        if(index >= 80 && index < 114) {
-            setBackground("street3.png");
-            ExploreStreets exploreStreets = new ExploreStreets(1800);
-            exploreStreets.addObject(player, 300, 250);
-            exploreStreets.addCameraFollower(player, 300, 250);
-            Greenfoot.setWorld(exploreStreets);
+           inActionWorld = true;
+           setBackground("street3.png");
+           ExploreStreets exploreStreets = new ExploreStreets(1800);
+           exploreStreets.addObject(player, 300, 250);
+           exploreStreets.addCameraFollower(player, 300, 250);
+           Greenfoot.setWorld(exploreStreets);
        }
        if(index >= 114) {
             setBackground("base.png");
@@ -248,5 +255,27 @@ public class DialogWorld extends World
            reake.setExpression(index);
            yua.setExpression(index);
        }
+    }
+    
+    public static void setInActionWorld(boolean value) {
+        inActionWorld = value;
+    }
+    
+    public static boolean inActionWorld() {
+        return inActionWorld;
+    }
+    
+    public void startBattle(boolean ninja) {
+        if (secondBattleDone) {
+            thirdBattleDone = true;
+        }
+        
+        secondBattleDone = true;
+        SecondCombat secondFight = new SecondCombat(player, null);
+        CombatEnemy enemy = ninja ? new CombatNinja(secondFight, 400) : new CombatSamurai(secondFight, 500);
+        secondFight.insertEnemy(enemy);
+        inActionWorld = true;
+        player.setCombatMode(true);
+        Greenfoot.setWorld(secondFight);
     }
 }

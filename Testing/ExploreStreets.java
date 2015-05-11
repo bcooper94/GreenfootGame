@@ -20,5 +20,6 @@ public class ExploreStreets extends ActionWorld
         addObject(new GroundPlatform(), fullWidth / 2, 350);
         
         addObject(new MovingSamurai(this), 1200, 300);
+        addObject(new MovingNinja(this), 1800, 300);
     }
 }

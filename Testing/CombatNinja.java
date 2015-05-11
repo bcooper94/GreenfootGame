@@ -16,7 +16,7 @@ public class CombatNinja extends CombatEnemy
     }
     
     public int attackPlayer() {
-        int damage = numberGen.nextInt(50) + 50;
+        int damage = numberGen.nextInt(10) + 15;
         Player.damage(damage);
         
         return damage;

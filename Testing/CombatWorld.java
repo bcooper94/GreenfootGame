@@ -97,11 +97,13 @@ public class CombatWorld extends ActionWorld
             Greenfoot.setWorld(Player.storyWorld);
         }
         player.setCombatMode(false);
+        DialogWorld.setInActionWorld(false);
     }
     
     public void returnToStory() {
         player.setCombatMode(false);
         Greenfoot.setWorld(Player.storyWorld);
+        DialogWorld.setInActionWorld(false);
     }
     
     public void setPlayerTurn(boolean value) {

@@ -28,12 +28,15 @@ public class Player extends MovingActor
     public Player(String name, DialogWorld story) {
         super(4);
         inCombat = false;
+        defending = false;
         health = 1000;
         maxHealth = 1000;
         level = 1;
         experience = 0;
         animationTimer = 0;
         this.storyWorld = story;
+        xCoord = 0;
+        yCoord = 0;
     }
     
     public void changeWorld(ActionWorld world, int xCoord, int yCoord) {
@@ -74,6 +77,10 @@ public class Player extends MovingActor
     
     public static int getMaxHealth() {
         return maxHealth;
+    }
+    
+    public static void setHealth(int value) {
+        health = value;
     }
     
     public static int getLevel() {
