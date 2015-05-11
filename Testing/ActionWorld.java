@@ -19,14 +19,13 @@ public class ActionWorld extends ScrollWorld
     private Actor background;
     private Player player;
     
-    public ActionWorld(DialogWorld returnHere, int fullWidth)
+    public ActionWorld(int fullWidth)
     {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         //super(600, 400, 1); 
         super(600, 400, 1, fullWidth, 400);
         this.player = player;
         //String[] temp = {"nice to meet you", "where you been?", "NOPE"};
-        previous = returnHere;
         //this.addObject(new Text(temp, this), 500, 600);
         actionBar = new ActionBar(this);
         addObject(actionBar, 350, 451);

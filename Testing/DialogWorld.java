@@ -35,8 +35,8 @@ public class DialogWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         
-        this.action = new ActionWorld(this, 1800);
-        this.player = new Player("Playername");
+        this.action = new ActionWorld(1800);
+        this.player = new Player("Playername", this);
         inActionWorld = false;
         String[] temp = {"hi", "you touched me!", "did you get this far? :3", "eien jaaaaa naiiiii", 
             "yukou~", "samurai ni umarete", "samurai no kokoro wo daiiiiite"};
@@ -171,7 +171,7 @@ public class DialogWorld extends World
        }
        if(index == 26) //First Battle
        {
-           FirstCombat firstCombat = new FirstCombat(player, this);
+           FirstCombat firstCombat = new FirstCombat(player, null);
            player.setCombatMode(true);
            Greenfoot.setWorld(firstCombat);
            firstCombat.setBackground("bedroom.png");
@@ -180,7 +180,7 @@ public class DialogWorld extends World
        }
        if(index >= 80 && index < 114) {
             setBackground("street3.png");
-            ExploreStreets exploreStreets = new ExploreStreets(this, 1800);
+            ExploreStreets exploreStreets = new ExploreStreets(1800);
             exploreStreets.addObject(player, 300, 250);
             exploreStreets.addCameraFollower(player, 300, 250);
             Greenfoot.setWorld(exploreStreets);

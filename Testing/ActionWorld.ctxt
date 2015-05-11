@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=returnHere\ fullWidth
-comment0.target=ActionWorld(DialogWorld,\ int)
+comment0.params=fullWidth
+comment0.target=ActionWorld(int)
 comment1.params=
 comment1.target=void\ act()
 comment2.params=

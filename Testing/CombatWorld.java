@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class CombatWorld extends ActionWorld
 {
     private CombatEnemy enemy;
-    private World returnWorld;
+    private ActionWorld returnWorld;
     private static ArrayList<CombatOption> options;
     private boolean playerTurn;
     private Player player;
@@ -44,10 +44,10 @@ public class CombatWorld extends ActionWorld
     }*/
     
     /** Only used for first combat scene. */
-    public CombatWorld(Player player, DialogWorld returnWorld) {
-        super(returnWorld, 600);
+    public CombatWorld(Player player, ActionWorld returnWorld) {
+        super(600);
         this.player = player;
-        this.returnWorld = (World)returnWorld;
+        this.returnWorld = returnWorld;
         selectedOption = 0;
         healthBar = new HealthBar(Player.getHealth(), Player.getMaxHealth());
         addObject(healthBar, 100, 360);
@@ -90,22 +90,30 @@ public class CombatWorld extends ActionWorld
     }
     
     public void endBattle() {
-        Greenfoot.setWorld(returnWorld);
+        if (returnWorld != null) {
+            Greenfoot.setWorld(returnWorld);
+        }
+        else {
+            Greenfoot.setWorld(Player.storyWorld);
+        }
+        player.setCombatMode(false);
     }
     
     public void returnToStory() {
         player.setCombatMode(false);
-        Greenfoot.setWorld(returnWorld);
+        Greenfoot.setWorld(Player.storyWorld);
     }
     
     public void setPlayerTurn(boolean value) {
         playerTurn = value;
         //enemy.setEnemyTurn(!value);
+        /*
         try {
             Thread.sleep(250);
         }
         catch (InterruptedException e) {
             
         }
+        */
     }
 }

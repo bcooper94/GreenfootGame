@@ -12,7 +12,7 @@ public class FirstCombat extends CombatWorld
      * Constructor for objects of class FirstCombat.
      * 
      */
-    public FirstCombat(Player player, DialogWorld returnWorld)
+    public FirstCombat(Player player, ActionWorld returnWorld)
     {
         super(player, returnWorld);
     }

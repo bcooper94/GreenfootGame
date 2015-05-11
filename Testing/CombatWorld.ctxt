@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=player\ returnWorld
-comment0.target=CombatWorld(Player,\ DialogWorld)
+comment0.target=CombatWorld(Player,\ ActionWorld)
 comment0.text=Only\ used\ for\ first\ combat\ scene.
 comment1.params=
 comment1.target=void\ act()

@@ -14,9 +14,11 @@ public class ExploreStreets extends ActionWorld
      * Constructor for objects of class ExploreStreets.
      * 
      */
-    public ExploreStreets(DialogWorld returnHere, int fullWidth) {
-        super(returnHere, fullWidth);
+    public ExploreStreets(int fullWidth) {
+        super(fullWidth);
         this.returnHere = returnHere;
         addObject(new GroundPlatform(), fullWidth / 2, 350);
+        
+        addObject(new MovingSamurai(this), 1200, 300);
     }
 }

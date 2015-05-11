@@ -9,7 +9,7 @@ import greenfoot.*;
 public class EnemyActor extends MovingActor
 {
     private static final int HEIGHT = 85;
-    private static final int COLLIDE = 70;
+    private static final int COLLIDE = 65;
     private GreenfootImage image;
     private static int timeDelay = 25;
     private int time;
@@ -27,38 +27,35 @@ public class EnemyActor extends MovingActor
     public void act() 
     {
         super.act();
-        //Player player = getWorl().getPlayer();
-        //time++;
-        //if (time == timeDelay) {
-            // Move toward player
-        //if 
-            if (getX() < Player.getXCoord() - COLLIDE) {
-                moveRight();
-            }
-            else if (getX() > Player.getXCoord() + COLLIDE) {
-                moveLeft();
-            }
-            if (getY() < Player.getYCoord() - HEIGHT && inPlayerRange())
-            {
-                jump();
-            }
-        //}
+        if (getX() < Player.getXCoord() - COLLIDE) {
+            moveRight();
+        }
+        else if (getX() > Player.getXCoord() + COLLIDE) {
+            moveLeft();
+        }
+        if (getY() < Player.getYCoord() - HEIGHT && inPlayerRange())
+        {
+            jump();
+        }
+        checkForPlayer();
     }
     
     public void checkForPlayer() {
         CombatWorld fight;
+        double levelScale = Player.getLevel() / 10;
         Player player = (Player)getOneIntersectingObject(Player.class);
         
         if (player != null) {
-            //fight = new CombatWorld(player, getActionWorld());
+            fight = new CombatWorld(player, (ActionWorld)getWorld());
             if (this instanceof MovingNinja) {
-                //fight.insertEnemy(new CombatNinja(fight));
+                fight.insertEnemy(new CombatNinja(fight,(int) levelScale * 30 + 400));
             }
             else {
-                //fight.insertEnemy(new CombatSamurai(fight));
+                fight.insertEnemy(new CombatSamurai(fight,(int) levelScale * 50 + 600));
             }
             player.setCombatMode(true);
-            //Greenfoot.setWorld(fight);
+            getWorld().removeObject(this);
+            Greenfoot.setWorld(fight);
         }
    }
     

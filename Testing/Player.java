@@ -8,6 +8,7 @@ import greenfoot.*;
  */
 public class Player extends MovingActor
 {
+    public static DialogWorld storyWorld;
     private static int health = 1000;
     private static int maxHealth = 1000;
     private static int level = 1;
@@ -24,7 +25,7 @@ public class Player extends MovingActor
     private int animationTimer;
     private GreenfootImage [] imgs = {new GreenfootImage("walk1.png"), new GreenfootImage("walk2.png"), new GreenfootImage("walk3.png"), new GreenfootImage("walk2.png")};
     
-    public Player(String name) {
+    public Player(String name, DialogWorld story) {
         super(4);
         inCombat = false;
         health = 1000;
@@ -32,6 +33,7 @@ public class Player extends MovingActor
         level = 1;
         experience = 0;
         animationTimer = 0;
+        this.storyWorld = story;
     }
     
     public void changeWorld(ActionWorld world, int xCoord, int yCoord) {
