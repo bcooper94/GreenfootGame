@@ -102,6 +102,7 @@ public class CombatWorld extends ActionWorld
     
     public void returnToStory() {
         player.setCombatMode(false);
+        Player.storyWorld.advance();
         Greenfoot.setWorld(Player.storyWorld);
         DialogWorld.setInActionWorld(false);
     }

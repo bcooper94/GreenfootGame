@@ -43,8 +43,6 @@ public class DialogWorld extends World
         inActionWorld = false;
         secondBattleDone = false;
         thirdBattleDone = false;
-        String[] temp = {"hi", "you touched me!", "did you get this far? :3", "eien jaaaaa naiiiii", 
-            "yukou~", "samurai ni umarete", "samurai no kokoro wo daiiiiite"};
         
         ArrayList <String> speak1 = new ArrayList <String> ();
         ArrayList <String> speak2 = new ArrayList <String> ();
@@ -99,8 +97,6 @@ public class DialogWorld extends World
         takeOff(reake);
         takeOff(crait);
         takeOff(yua);
-        
-        //Greenfoot.playSound("Shinobi koi Utsutsu Opening.mp3");
    }
    
    public void act()
@@ -114,24 +110,38 @@ public class DialogWorld extends World
          dialog.speedAct();
          dialog2.speedAct();
          name.speedAct();
-         setBG(curDialog);
-         setCharacters(curDialog);
+         setBG(dialog.curDialog + 1);
+         setCharacters(dialog.curDialog + 1);
       }
       if(!inActionWorld && Greenfoot.mouseClicked(null))
       {
          curDialog++;
-         setCharacters(curDialog);
-         setBG(curDialog);
-         //setMusic(curDialog);
+         setCharacters(dialog.curDialog + 1);
+         setBG(dialog.curDialog + 1);
+         setMusic(dialog.curDialog + 1);
       }
    }
-   
+   public void advance()
+   {
+       curDialog++;
+       dialog.curDialog++;
+       dialog2.curDialog++;
+       name.curDialog++;
+       dialog.speedAct();
+       dialog2.speedAct();
+       name.speedAct();
+       setBG(dialog.curDialog + 1);
+       setCharacters(dialog.curDialog + 1);
+   }
    private void setMusic(int index)
    {
        if(index == 12 || index == 26 || index == 38 || index == 80 || index == 114 || index == 175
             || index == 183 || index == 193 || index == 212)
        {
-           curMusic.stop();
+           if(curMusic != null && curMusic.isPlaying())
+           {
+               curMusic.stop();
+           }
            curMusic = null;
        }
        else if(index == 1 || index == 213)
@@ -140,12 +150,13 @@ public class DialogWorld extends World
        }
        else if(index == 13 || index == 27 || index == 81)
        {
-           curMusic = new GreenfootSound("112072__cheesepuff__suspence-background.mp3");
+           curMusic = new GreenfootSound("112072_cheesepuff_suspence-background.wav");
            curMusic.setVolume(100);
        }
        else if(index == 39 || index == 109)
        {
-           //some other relaxed talking bg music that i dont have yet
+           curMusic = new GreenfootSound("211492__lemoncreme__guitar-music.wav");
+           curMusic.setVolume(60);
        }
        else if(index == 115)
        {
@@ -154,11 +165,11 @@ public class DialogWorld extends World
        }
        else if(index == 184)
        {
-           curMusic = new GreenfootSound("109239__cheesepuff__song-6.mp3");
+           curMusic = new GreenfootSound("109239__cheesepuff__song-6.wav");
        }
        else if(index == 194)
        {
-           //curMusic = new GreenfootSound("250856__joshuaempyre__epic-orchestra-loop.wav");
+           curMusic = new GreenfootSound("250856_joshuaempyre_epic-orchestra-loop_converted.wav");
        }
        if(curMusic != null && !curMusic.isPlaying())
        {
@@ -177,6 +188,8 @@ public class DialogWorld extends World
        if(index == 26) //First Battle
        {
            //curDialog += 2;
+           advance();
+           advance();
            FirstCombat firstCombat = new FirstCombat(player, null);
            player.setCombatMode(true);
            Greenfoot.setWorld(firstCombat);
