@@ -118,7 +118,12 @@ public class CombatWorld extends ActionWorld
     public void insertEnemy(CombatEnemy enemy) {
         Random random = new Random();
         this.enemy = enemy;
-        addObject(enemy, 225 + random.nextInt(50), 300);
+        if (!enemy.toString().equals("final boss")) {
+            addObject(enemy, 225 + random.nextInt(50), 300);
+        }
+        else {
+            addObject(enemy, 300, 205);
+        }
     }
     
     public void endBattle() {

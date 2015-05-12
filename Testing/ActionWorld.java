@@ -18,6 +18,7 @@ public class ActionWorld extends ScrollWorld
     private ActionBar actionBar;
     private Actor background;
     private Player player;
+    public GreenfootSound curMusic;
     
     public ActionWorld(int fullWidth)
     {
@@ -38,6 +39,8 @@ public class ActionWorld extends ScrollWorld
         if (Player.getXCoord() > 590) {
             Player.setCombatMode(false);
             DialogWorld.setInActionWorld(false);
+            if(curMusic != null && curMusic.isPlaying())
+                curMusic.stop();
             Greenfoot.setWorld(Player.storyWorld);
             Player.setX(0);
         }
