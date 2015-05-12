@@ -34,6 +34,7 @@ public class DialogWorld extends World
     public static boolean thirdBattleDone;
     public static boolean exploreStreetsDone;
     public static boolean roadToPalaceDone;
+    public static boolean finalBossDone;
     
     public DialogWorld() throws Exception
     {
@@ -47,6 +48,7 @@ public class DialogWorld extends World
         thirdBattleDone = false;
         exploreStreetsDone = false;
         roadToPalaceDone = false;
+        finalBossDone = false;
         
         ArrayList <String> speak1 = new ArrayList <String> ();
         ArrayList <String> speak2 = new ArrayList <String> ();
@@ -124,24 +126,31 @@ public class DialogWorld extends World
          setBG(dialog.curDialog + 1);
          setMusic(dialog.curDialog + 1);
       }
-      if (curDialog == 176 && !exploreStreetsDone) {
+      if (dialog.curDialog == 183 && !exploreStreetsDone) {
           //advance();
+          advance();
           inActionWorld = true;
           ExploreStreets exploreStreets = new ExploreStreets(1800);
           exploreStreets.addObject(player, 300, 250);
           exploreStreets.addCameraFollower(player, 300, 250);
           Greenfoot.setWorld(exploreStreets);
       }
-      if (curDialog == 194 && !roadToPalaceDone) {
-          //advance();
+      if (dialog.curDialog == 192 && !roadToPalaceDone) {
+          advance();
           inActionWorld = true;
           RoadToPalace palaceRoad = new RoadToPalace(1200);
           palaceRoad.addObject(player, 300, 250);
           palaceRoad.addCameraFollower(player, 300, 250);
           Greenfoot.setWorld(palaceRoad);
       }
-      if (curDialog == 213) {
+      if (dialog.curDialog == 212 && !finalBossDone) {
           // Boss battle
+          finalBossDone = true;
+          inActionWorld = true;
+          CombatWorld bossBattle = new CombatWorld(player, null);
+          bossBattle.insertEnemy(new FinalBoss(bossBattle, 1000));
+          player.setCombatMode(true);
+          Greenfoot.setWorld(bossBattle);
       }
    }
    public void advance()
@@ -150,15 +159,15 @@ public class DialogWorld extends World
        dialog.curDialog++;
        dialog2.curDialog++;
        name.curDialog++;
-       //dialog.speedAct();
-       //dialog2.speedAct();
-       //name.speedAct();
+       dialog.speedAct();
+       dialog2.speedAct();
+       name.speedAct();
        setBG(dialog.curDialog + 1);
        setCharacters(dialog.curDialog + 1);
    }
    private void setMusic(int index)
    {
-       if(index == 12 || index == 26 || index == 38 || index == 80 || index == 114 || index == 175
+       if(index == 12 || index == 26 || index == 38 || index == 80 || index == 108 || index == 114 || index == 175
             || index == 183 || index == 193 || index == 212)
        {
            if(curMusic != null && curMusic.isPlaying())
@@ -186,7 +195,7 @@ public class DialogWorld extends World
            curMusic = new GreenfootSound("211492__lemoncreme__guitar-music.wav");
            curMusic.setVolume(60);
        }
-       else if(index == 184)
+       else if(index == 183)
        {
            curMusic = new GreenfootSound("109239_cheesepuff_song-6.wav");
        }
@@ -208,29 +217,39 @@ public class DialogWorld extends World
        if(index >= 13 && index < 80) {
             setBackground("street1.png");
        }
-       if(index == 26) //First Battle
-       {
-           //curDialog += 2;
+       if(index == 26) { //First Battle
            advance();
            advance();
            FirstCombat firstCombat = new FirstCombat(player, null);
            player.setCombatMode(true);
            Greenfoot.setWorld(firstCombat);
-           firstCombat.setBackground("bedroom.png");
+           firstCombat.setBackground("street1.png");
            inActionWorld = true;
-           firstCombat.insertEnemy(new CombatNinja(firstCombat, 10000));
+           firstCombat.insertEnemy(new FirstEncounter(firstCombat, 10000));
        }
        if(index >= 80 && index < 114) {
            setBackground("street3.png");
        }
-       if(index >= 114) {
+       if (dialog.curDialog == 108 && !Player.storyWorld.thirdBattleDone) {
+           Player.storyWorld.startBattle(true);
+       }
+       if(index >= 114 && index < 175) {
             setBackground("base.png");
        }
        if(index == 163) {
             picture.setImage("bedpic.png");
        }
-       if(index == 171) {
+       if(index == 171 || index == 212) {
            picture.setImage("blank.png");
+       }
+       if(index == 183)
+           setBackground("Moon_Palace_By_Night.jpg");
+       if(index == 207)
+            picture.setImage("homework-help-2.jpg");
+       if(index == 224)
+       {
+           takeOff(reake);
+           setBackground("bedroom.png");
        }
    }
    
@@ -297,16 +316,18 @@ public class DialogWorld extends World
     }
     
     public void startBattle(boolean ninja) {
+        /**
         if (secondBattleDone) {
             thirdBattleDone = true;
         }
-        
-        secondBattleDone = true;
+        **/
+        advance();
+        thirdBattleDone = true;
         SecondCombat secondFight = new SecondCombat(player, null);
         CombatEnemy enemy = ninja ? new CombatNinja(secondFight, 400) : new CombatSamurai(secondFight, 500);
         secondFight.insertEnemy(enemy);
         inActionWorld = true;
         player.setCombatMode(true);
-        Greenfoot.setWorld(secondFight);
+        Greenfoot.setWorld(secondFight);  
     }
 }

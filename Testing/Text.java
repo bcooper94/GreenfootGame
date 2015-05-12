@@ -46,13 +46,12 @@ public class Text extends Actor
            else
                 setImage(new GreenfootImage(text.get(curDialog), TEXTSIZE, Color.WHITE, bgColor));
        }
+       /**
        if (curDialog == 103 && !Player.storyWorld.secondBattleDone) {
            Player.storyWorld.startBattle(true);
            curDialog++;
        }
-       if (curDialog == 108 && !Player.storyWorld.thirdBattleDone) {
-           Player.storyWorld.startBattle(false);
-       }
+       **/
     }    
     public void speedAct()
     {

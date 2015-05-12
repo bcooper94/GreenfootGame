@@ -55,11 +55,13 @@ public class CombatWorld extends ActionWorld
         for (int i = 0; i < options.size(); i++) {
             addObject(options.get(i), 500, 350 + i * 20);
         }
+        resetCombatOptions();
     }
     
     public void act() {
         int enemyDamage;
         String key = Greenfoot.getKey();
+        updateSelectedOption();
         if (key != null) {
             if (selectedOption > 0 && (key.equals("w") || key.equals("up"))) {
                 options.get(selectedOption--).setSelected(false);
@@ -81,12 +83,42 @@ public class CombatWorld extends ActionWorld
             addObject(new BattleText(enemy + " hits you for " + enemyDamage + " damage!"), 300, 50);
             setPlayerTurn(true);
         }
+        
+        combatOptionsListener();
+    }
+    
+    public void combatOptionsListener() {
+        if (Greenfoot.mouseMoved(options.get(0))) {
+            resetCombatOptions();
+            options.get(0).setSelected(true);
+        }
+        else if (Greenfoot.mouseMoved(options.get(1))) {
+            resetCombatOptions();
+            options.get(1).setSelected(true);
+        }
+        else if (Greenfoot.mouseMoved(options.get(2))) {
+            resetCombatOptions();
+            options.get(2).setSelected(true);
+        }
+        
+        if (Greenfoot.mouseClicked(options.get(0))) {
+            options.get(0).carryOut(player, enemy);
+            setPlayerTurn(false);
+        }
+        else if (Greenfoot.mouseClicked(options.get(1))) {
+            options.get(1).carryOut(player, enemy);
+            setPlayerTurn(false);
+        }
+        else if (Greenfoot.mouseClicked(options.get(2))) {
+            options.get(2).carryOut(player, enemy);
+            setPlayerTurn(false);
+        }
     }
     
     public void insertEnemy(CombatEnemy enemy) {
         Random random = new Random();
         this.enemy = enemy;
-        addObject(enemy, 225 + random.nextInt(50), 150 + random.nextInt(40));
+        addObject(enemy, 225 + random.nextInt(50), 300);
     }
     
     public void endBattle() {
@@ -105,6 +137,20 @@ public class CombatWorld extends ActionWorld
         Player.storyWorld.advance();
         Greenfoot.setWorld(Player.storyWorld);
         DialogWorld.setInActionWorld(false);
+    }
+    
+    public static void resetCombatOptions() {
+        options.get(0).setSelected(false);
+        options.get(1).setSelected(false);
+        options.get(2).setSelected(false);
+    }
+    
+    public static void updateSelectedOption() {
+        for (CombatOption opt : options) {
+            if (!opt.getSelected()) {
+                opt.setSelected(false);
+            }
+        }
     }
     
     public void setPlayerTurn(boolean value) {

@@ -3,7 +3,7 @@ Made by Diana "Kairo" Phan and Brandon Cooper
 (so it's time to start something new!
 (...Wow, a lot of these games are so nostalgic!
 (Oh? This one...)
-([Game name] ...This was an RPG right?)
+((Un)Real ...This was an RPG right?)
 (Something about mercenaries named 'The Guild' 
 (If I remember right, a samurai, a 'phantom' and a thief
 to stop a rebellion started by an invading country...)
@@ -78,7 +78,7 @@ The man suddenly falls to the ground, revealing
 "You're a terrible mercenary, Reake."
 "Don't worry, he's actually a very nice person."
 "...I think."
-*transition to another street* 80
+
 "...Enemy."
 "How many?"
 "Just one."
@@ -86,8 +86,8 @@ The man suddenly falls to the ground, revealing
 "Shall I clean up?"
 "If they're a magic user..."
 (It's so dark I can't see anything. Where... Huh?)
-*Enemy stuff shows up*
-(Is that... the GUI?! [Game name's] GUI?!)
+*Enemy Information shows up*
+(Is that... the GUI?! (Un)Real's GUI?!)
 "They're... They're a normal swordsman."
 "!!!"
 "What are you basing this on?"
@@ -100,13 +100,13 @@ The man suddenly falls to the ground, revealing
 "Pointless. I'm attacking.
 "Hey! ..."
 "Well let's go help him out. Can't hurt, right?"
-*Battle Starts* 102
+*Battle Starts* 
 (It really is the GUI from the game...
 "Hey. Can you follow my instructions?"
 "Listen to you? You think you're better at
 "Why not, Reake? Amuse us a bit~. 
 "Tch..."
-*After the fight* 108
+*After the fight* 
 "Hahh. Not bad!"
 "..."
 "We're going."
@@ -146,7 +146,7 @@ Crait sighs.
 (If telling them the truth keeps them from abandoning
 (Let's just hope they don't come to the conclusion
 "I'm not actually supposed to be in this world."
-"This place is a part of [Game name], which is the 
+"This place is a part of (Un)Real, which is the 
 "I don't know how I got here, but I need to find a
 "..."
 "...So they say."
@@ -173,7 +173,7 @@ Yua giggles.
 "Anyways, that's where you wanted to go right?
 (Did they know the whole time who I was?)
 (...Urgh! Whatever!)
-*start action world* 175
+
 "Be careful okay? There are bound to be enemies 
 "Not that we'll lose that easily either though!"
 "Ah that's right. You can see the GU- I mean, the 

@@ -14,14 +14,14 @@ public abstract class CombatOption extends HUD
     private static final int TEXT_HEIGHT = 15;
     private String mouseOverImg;
     private String noMouseOverImg;
-    //private boolean mouseOver;
+    private boolean mouseOver;
     private boolean selected;
     
     public CombatOption(String mouseOverImg, String noMouseOverImg) {
        GreenfootImage image = new GreenfootImage(MAX_TEXT_WIDTH, TEXT_HEIGHT);
        this.mouseOverImg = mouseOverImg;
        this.noMouseOverImg = noMouseOverImg;
-       //mouseOver = false;
+       mouseOver = false;
        setImage(new GreenfootImage(noMouseOverImg));
        selected = false;
     }
@@ -30,24 +30,33 @@ public abstract class CombatOption extends HUD
      * Act - do whatever the OptionsPane wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
-    {
-        // Removed mouse over support
-        if (/*!mouseOver && Greenfoot.mouseMoved(this) || */selected)
-        {  
+    public void act() {
+        /*
+        if (mouseOver && Greenfoot.mouseMoved(this)) {
+            //CombatWorld.resetCombatOptions();
             setImage(new GreenfootImage(mouseOverImg));
-            //mouseOver = true;
-        }  
-        if (/*mouseOver && Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this) || */!selected)  
-        {  
+            mouseOver = true;
+            //selected = true;
+        }
+        */
+        if (selected) {
+            //CombatWorld.resetCombatOptions();
+            setImage(new GreenfootImage(mouseOverImg));
+        }
+        if (!selected) {
              setImage(new GreenfootImage(noMouseOverImg));  
              //mouseOver = false;
         }
-    }    
+    }
     
     public void setSelected(boolean selected) {
         this.selected = selected;
     }
     
+    public boolean getSelected() {
+        return selected || mouseOver;
+    }
+    
     public abstract void carryOut(Player player, CombatEnemy enemy);
 }
+
