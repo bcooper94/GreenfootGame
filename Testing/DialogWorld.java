@@ -196,7 +196,7 @@ public class DialogWorld extends World
        }
        if(curMusic != null && !curMusic.isPlaying())
        {
-           //curMusic.playLoop();
+           curMusic.playLoop();
        }
    }
    
