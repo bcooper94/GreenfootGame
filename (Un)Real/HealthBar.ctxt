@@ -1,11 +1,11 @@
 #BlueJ class context
-comment0.params=maxHealth\ curHealth
-comment0.target=HealthBar(int,\ int)
-comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ HealthBar\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-comment2.params=curWorld
-comment2.target=void\ redraw(ActionWorld)
-comment3.params=amount
-comment3.target=void\ changeHealth(int)
+comment0.params=
+comment0.target=void\ act()
+comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ HealthBar\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.params=max\ current
+comment1.target=HealthBar(int,\ int)
+comment2.params=max
+comment2.target=HealthBar(int)
+comment3.params=
+comment3.target=void\ updateColor()
 numComments=4

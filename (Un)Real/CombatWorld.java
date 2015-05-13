@@ -5,8 +5,7 @@ import java.util.ArrayList;
 /**
  * Write a description of class CombatWorld here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Brandon Cooper
  */
 public class CombatWorld extends ActionWorld
 {
@@ -15,7 +14,7 @@ public class CombatWorld extends ActionWorld
     private static ArrayList<CombatOption> options;
     private boolean playerTurn;
     private Player player;
-    private HealthBar healthBar;
+    private static HealthBar healthBar;
     
     private static int selectedOption;
     
@@ -29,27 +28,13 @@ public class CombatWorld extends ActionWorld
         options.get(selectedOption).setSelected(true);
     }
     
-    /**
-     * Constructor for objects of class CombatWorld.
-     * 
-     */
-    /*
-    public CombatWorld(Player player, ActionWorld returnWorld, DialogWorld mainDialog) {
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(mainDialog);
-        this.returnWorld = (World)returnWorld;
-        addPlayer(player, 300, 250, false);
-        
-        
-    }*/
-    
     /** Only used for first combat scene. */
     public CombatWorld(Player player, ActionWorld returnWorld) {
         super(600);
         this.player = player;
         this.returnWorld = returnWorld;
         selectedOption = 0;
-        healthBar = new HealthBar(Player.getHealth(), Player.getMaxHealth());
+        healthBar = new HealthBar(Player.getMaxHealth(), Player.getHealth());
         addObject(healthBar, 100, 360);
         
         for (int i = 0; i < options.size(); i++) {
@@ -160,14 +145,9 @@ public class CombatWorld extends ActionWorld
     
     public void setPlayerTurn(boolean value) {
         playerTurn = value;
-        //enemy.setEnemyTurn(!value);
-        /*
-        try {
-            Thread.sleep(250);
-        }
-        catch (InterruptedException e) {
-            
-        }
-        */
+    }
+    
+    public static void changeHealthBar(int value) {
+        healthBar.add(-value);
     }
 }

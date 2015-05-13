@@ -15,7 +15,7 @@ public class Player extends MovingActor
     private static int experience = 0;
     private static boolean inCombat;
     private static boolean defending;
-    private static HealthBar healthBar = new HealthBar(maxHealth, health);
+    //private static HealthBar healthBar = new HealthBar(maxHealth, health);
     private static int xCoord;
     private static int yCoord;
     
@@ -40,7 +40,7 @@ public class Player extends MovingActor
     }
     
     public void changeWorld(ActionWorld world, int xCoord, int yCoord) {
-        healthBar.redraw(world);
+        //healthBar.redraw(world);
         world.addObject(this, xCoord, yCoord);
         this.xCoord = xCoord;
         this.yCoord = yCoord;
@@ -110,8 +110,10 @@ public class Player extends MovingActor
     }
     
     public static void damage(int damage) {
-        health -= defending ? damage / 3 : damage;
-        healthBar.changeHealth(defending ? damage / 3 : -damage);
+        int actualDamage = defending ? damage / 3 : damage;
+        
+        health -= actualDamage;
+        CombatWorld.changeHealthBar(actualDamage);
         defending = false;
        // End if player dies
         if (health <= 0) {

@@ -109,18 +109,6 @@ public class DialogWorld extends World
 
     public void act()
     {
-        if(!inActionWorld && Greenfoot.getKey() == "space")
-        {
-            curDialog+=10;
-            dialog.curDialog+=10;
-            dialog2.curDialog+=10;
-            name.curDialog+=10;
-            dialog.speedAct();
-            dialog2.speedAct();
-            name.speedAct();
-            setBG(dialog.curDialog + 1);
-            setCharacters(dialog.curDialog + 1);
-        }
         if(!inActionWorld && Greenfoot.mouseClicked(null))
         {
             curDialog++;

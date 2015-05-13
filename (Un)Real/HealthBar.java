@@ -1,71 +1,50 @@
-import greenfoot.*;
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
-
 /**
  * Write a description of class HealthBar here.
  * 
- * @author (your name) 
+ * @author @author Zamoht
  * @version (a version number or a date)
  */
-public class HealthBar extends HUD
+public class HealthBar extends StatBar
 {
-    private static final int BARHEIGHT = 20;
-    private static final int BARWIDTH = 80;
-    private ActionWorld world;
-    private int maxHealth;
-    private int curHealth;
-    private GreenfootImage bar;
-    
-    public HealthBar(int maxHealth, int curHealth) {
-        this.maxHealth = this.curHealth = maxHealth;
-    }
     /**
      * Act - do whatever the HealthBar wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        // Add your action code here.
-        if (getWorld() != null) {
-            redraw((ActionWorld)getWorld());
-        }
+        //You can just delete the whole act method if you don't need to add anything
+        super.act();
+    }    
+    
+    public HealthBar(int max, int current)
+    {
+        //Creates a new stat bar with a green color, a width of 140 pixels, a height of 24 pixels,
+        //the ROUND bar style, a max value and a current value.
+        super(new Color(0, 255, 0), 140, 24, Style.ROUND, max, current);
+        //Sets the update speed to 5.
+        setSpeed(5);
     }
     
-    public void redraw(ActionWorld curWorld) {
-        /*
-        bar = new GreenfootImage(BARWIDTH, BARHEIGHT);
-        bar.setColor(Color.RED);
-        bar.fill();
-        bar.drawRect(15, 250, BARWIDTH - 4, BARHEIGHT - 4);
-        bar.fillRect(15, 250, (Player.getHealth() / Player.getMaxHealth()) * BARWIDTH, BARHEIGHT);
-        //bar.fill();
-        setImage(bar);
-        */
-        
-        
-        int barValue = (int) (BARWIDTH * (Player.getHealth() / Player.getMaxHealth()));
-        if (bar != null) {
-            bar.clear();
-        }
-        bar = new GreenfootImage(BARWIDTH + 4, BARHEIGHT + 4);
-        bar.setColor(Color.BLACK);
-        bar.fill();
-        bar.setColor(Color.RED);
-        bar.drawRect(0, 0, bar.getWidth() - 1, bar.getHeight() - 1);
-        bar.setColor(Color.RED);
-        bar.fillRect(2, 2, barValue, BARHEIGHT);
-        
-        int maxY = 0;
-        if (bar.getHeight() > maxY) maxY = bar.getHeight();
-        GreenfootImage image = new GreenfootImage(BARWIDTH, BARHEIGHT);
-        ///image.setColor(Color.BLACK);
-        //image.fill();
-        image.drawImage(bar, 20, 350);
-        setImage(bar);
+    public HealthBar(int max)
+    {
+        this(max, max);
     }
     
-    public void changeHealth(int amount) {
-        curHealth += amount;
-        redraw((ActionWorld)getWorld());
+    public void updateColor()
+    {
+        if (getValue() <= getMax()/4)
+        {
+            setColor(Color.red);
+        }
+        else if (getValue() < getMax()/2)
+        {
+            setColor(Color.yellow);
+        }
+        else
+        {
+            setColor(Color.green);
+        }
     }
 }
